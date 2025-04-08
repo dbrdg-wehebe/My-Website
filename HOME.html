@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom & Grow</title>
+  <link rel="icon" type="image/x-icon" href="bloomgrow.png ">
+  <link rel="stylesheet" href="bloom.css">
+</head>
+<body>
+  <header>
+    <h1>Bloom & Grow</h1>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('plant-types')">Plant Types</a>
+      <a href="#" onclick="showSection('plant-care')">Plant Care Guide</a>
+      <a href="#" onclick="showSection('user-account')">User Account</a>
+      <a href="#" onclick="showSection('support-faq')">Support & FAQs</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="section active">
+      <h2>Welcome to Bloom & Grow</h2>
+      <p>Your ultimate plant care and gardening guide.</p>
+      <br><br>
+      <p>In gardens wide and pots so small,</p>
+      <p>Bloom & Grow will guide you all.</p>
+        <p>From seeds to stems, from roots to leaves,</p>
+        <p>We teach you all that nature weaves.</p>
+        <br>
+        <p>With care and love, your plants will thrive,</p>
+        <p>In every corner, they’ll come alive.</p>
+        <p>So take a step, come join the fun,</p>
+        <p>And watch your green adventures run!</p>
+      </section>
+
+    <!-- Plant Types -->
+    <section id="plant-types" class="section">
+      <h2>Plant Types</h2>
+      <div id="plant-types-content">
+        <button onclick="showPlantTypesOptions()">Categories</button>
+        <button onclick="showSearch()">Search/Filter</button>
+      </div>
+    </section>
+
+    <!-- Plant Care Guide -->
+    <section id="plant-care" class="section">
+      <h2>Plant Care Guide</h2>
+      <p>Learn how to take care of your plants effectively.</p>
+    </section>
+
+    <!-- User Account -->
+    <section id="user-account" class="section">
+      <h2>User Account</h2>
+      <button onclick="showSignUp()">Sign Up</button>
+      <button onclick="showLogIn()">Log In</button>
+      <div id="user-account-content"></div>
+    </section>
+
+    <!-- Support & FAQs -->
+    <section id="support-faq" class="section">
+      <h2>Support & FAQs</h2>
+      <p>Find answers to common questions or contact our support team.</p>
+    </section>
+  </main>
+
+  <script src="bloom.js"></script>
+  <footer>Program and Develop by: Gerald D. Balin</footer>
+</body>
+</html>
+You sent

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* General reset and body styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #A8E6CF, #DCEDC1, #FFB3B3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .login-container input:focus {
+            border-color: #FFB3B3;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        .login-container button:disabled {
+            background-color: #ccc;
+        }
+
+        .error-msg {
+            color: #ff6666;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .flower-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/flower-pattern.png');
+            background-size: 30%;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+    </style>
+</head> 
+<body>
+    <div class="flower-decoration"></div>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="loginBtn" onclick="login()">Login</button>
+        <p id="errorMsg" class="error-msg">Incorrect username or password. Please try again in 10 seconds.</p>
+    </div>
+
+    <script>
+        const correctUsername = "user123";
+        const correctPassword = "password123";
+        const errorMsg = document.getElementById("errorMsg");
+        const loginBtn = document.getElementById("loginBtn");
+
+        function login() {
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+
+            // Check if username and password are correct
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                window.location.href = "HOME.html";  // Redirect to the website
+                alert('Log-in Successful')
+            } else {
+                errorMsg.style.display = "block";  // Show error message
+                loginBtn.disabled = true;  // Disable login button
+                
+
+                // Wait for 10 seconds before allowing another attempt
+                setTimeout(function() {
+                    loginBtn.disabled = false;
+                    errorMsg.style.display = "none";  // Hide error message
+                }, 10000);  // 10 seconds (10000 ms)
+            }
+        }
+    </script>
+</body>
+</html>
